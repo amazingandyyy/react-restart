@@ -14,6 +14,8 @@ import Welcome from './components/welcome'
 import Layout from './components/layout'
 import reducers from './reducers'
 
+import './styles/index.scss'
+
 const store = applyMiddleware(reduxThunk)(createStore)(reducers)
 
 const Root = () => (
