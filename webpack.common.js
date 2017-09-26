@@ -1,15 +1,17 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractCSS = new ExtractTextPlugin(path.resolve(__dirname,'dist/styles/[name].css'));
 
 module.exports = {
-    entry: './src/app.js',
-    output: {
-        path: path.resolve(__dirname, 'dist/js/'),
-        filename: "[name].js"
+    entry: {
+        app: './src/app.js',
+        vender: ['react', 'react-dom', 'redux', 'react-redux', 'react-router']
     },
-    devtool: "source-map", 
+    output: {
+        path: path.resolve(__dirname, 'dist/'),
+        filename: "js/[name].[chunkhash].js"
+    },
     module: {
         rules: [
             {
@@ -20,7 +22,7 @@ module.exports = {
             {
                 test: /\.s?css$/,
                 exclude: path.resolve(__dirname, "node_modules"),
-                use: extractCSS.extract({
+                use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [{
                         loader: 'css-loader',
@@ -32,11 +34,15 @@ module.exports = {
             }
         ]
     },
-    devServer: {
-        port: 3000
-    },
     plugins: [
         new HtmlWebpackPlugin({template: path.resolve(__dirname, 'src/index.html')}),
-        extractCSS
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',
+            filename: "manifest.js",
+            chunks: ['vender']
+        }),
+        new ExtractTextPlugin({
+            filename: 'styles/style.css'
+        }),
     ]
 }
