@@ -1,1 +1,1 @@
-export const ROOT = 'ROOT'
+export const ROOT = 'ROOT';

@@ -1,6 +1,4 @@
-import {ROOT} from '../reducers/types'
-import {actionCreator,dispatch} from 'react-redux'
+import { ROOT } from '../reducers/types';
 
-export const changeRootMsg = () => {
-    return (dispatch) => dispatch({type: ROOT, payload:'redux works with actions'})
-}
+export const changeRootMsg = () => dispatch => dispatch({ type: ROOT, payload: 'redux works with actions' });
+
