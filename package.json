@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "rm -rf && webpack --config webpack.prod.js"
+    "build": "rm -rf && webpack --config webpack.prod.js",
+    "start": "serve ./dist"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +32,7 @@
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
+    "serve": "^6.1.0",
     "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.6.0",

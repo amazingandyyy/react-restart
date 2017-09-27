@@ -1,5 +1,18 @@
 # React Restart
 
+## Usage
+```
+git clone git@github.com:amazingandyyy/react-restart.git
+npm install
+npm run dev
+```
+
+## Build & Run
+```
+npm run build && npm run start
+<!-- open browser http://localhost:5000 -->
+```
+
 ## Start: MVP
 - create index.html, add #id element
 - add webpack, setup entry and output, read jsx with babel-loader
