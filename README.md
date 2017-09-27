@@ -15,3 +15,6 @@
 - add webpack.common.js
 - merge with webpack.dev.js
 - merge with webpack.prod.js
+
+## License
+[MIT](https://github.com/amazingandyyy/react-restart/blob/master/LICENSE)
