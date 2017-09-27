@@ -6,3 +6,7 @@
 - add .babelrc, install mutiple babel packages
 - use webpack-dev-server serve the files
 - finish react MVP
+
+## React-router and Redux
+- add react-router
+- add redux, react-redux
